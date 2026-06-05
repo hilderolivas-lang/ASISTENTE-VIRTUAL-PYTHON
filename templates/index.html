@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Asistente Inteligente</title>
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+}
+
+.contenedor{
+    width:800px;
+    margin:auto;
+    margin-top:30px;
+}
+
+h1{
+    text-align:center;
+}
+
+button{
+
+    width:100%;
+    padding:20px;
+
+    font-size:20px;
+
+    background:#38bdf8;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.chat{
+
+    margin-top:20px;
+
+    background:#1e293b;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    height:400px;
+
+    overflow:auto;
+}
+
+.usuario{
+    color:#7dd3fc;
+}
+
+.asistente{
+    color:#22c55e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>🤖 Asistente Inteligente</h1>
+
+<h3>Usuario: {{ nombre }}</h3>
+
+
+{% if error %}
+
+<p style="color:red;">
+    {{ error }}
+</p>
+
+{% endif %}
+
+
+<form method="POST">
+
+<button type="submit">
+
+🎤 Hablar
+
+</button>
+
+</form>
+
+<div class="chat">
+
+{% for item in conversacion %}
+
+<p class="usuario">
+
+Usuario:
+{{ item.usuario }}
+
+</p>
+
+<p class="asistente">
+
+Asistente:
+{{ item.respuesta }}
+
+</p>
+
+<hr>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
