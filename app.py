@@ -53,7 +53,7 @@ async def generar_voz(texto):
 
     comunicacion = edge_tts.Communicate(
         texto,
-        voice="es-MX-DaliaNeural"
+        voice="es-NI-FedericoNeural"
     )
 
     await comunicacion.save(archivo)
